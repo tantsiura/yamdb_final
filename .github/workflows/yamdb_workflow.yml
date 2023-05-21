@@ -56,9 +56,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            git config --global core.autocrlf false
-            sudo docker-compose -f <docker-compose.yml> stop
-            sudo docker-compose -f <docker-compose.yml> rm web
+            sudo docker-compose stop
+            sudo docker-compose rm web
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
