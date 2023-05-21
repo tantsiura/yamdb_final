@@ -1,28 +1,24 @@
-version: '3.1'
+version: '3.8'
+
 services:
   db:
-    image: postgres:12.4
+    image: postgres:13.0-alpine
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - db_value:/var/lib/postgresql/data/
     env_file:
       - ./.env
-    restart:
-      always
   web:
-    image: tantsiura/yamdb_final:latest
+    image: bujhvh/api_yamdb-web:latest
     restart: always
     volumes:
-      - static_value:/code/static/
-      - media_value:/code/media/
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - db
     env_file:
       - ./.env
-    links:
-      - db
-
   nginx:
-    image: nginx:1.19.3
+    image: nginx:1.21.3-alpine
     ports:
       - "80:80"
     volumes:
@@ -31,7 +27,8 @@ services:
       - media_value:/var/html/media/
     depends_on:
       - web
+
 volumes:
-  postgres_data:
   static_value:
   media_value:
+  db_value:
