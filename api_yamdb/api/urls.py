@@ -1,27 +1,9 @@
-<<<<<<< HEAD
-=======
-from django.urls import include, path
->>>>>>> 65b8e1507a42d26c734ea6f696bb4dd670fbf374
-from rest_framework.routers import DefaultRouter
-
 from api.views import (
-    CategoryViewSet,
-<<<<<<< HEAD
-    GenreViewSet,
-    TitleViewSet,
+    CategoryViewSet, CommentViewSet, GenreViewSet, ReviewViewSet, TitleViewSet,
+    UserViewSet,
 )
-
-router = DefaultRouter()
-router.register("categories", CategoryViewSet)
-router.register("genres", GenreViewSet)
-router.register("titles", TitleViewSet)
-=======
-    CommentViewSet,
-    GenreViewSet,
-    ReviewViewSet,
-    TitleViewSet,
-    UserViewSet
-)
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
 router_v1 = DefaultRouter()
 router_v1.register("categories", CategoryViewSet)
@@ -41,4 +23,3 @@ urlpatterns = [
     path("v1/", include(router_v1.urls)),
     path("v1/auth/", include("users.urls")),
 ]
->>>>>>> 65b8e1507a42d26c734ea6f696bb4dd670fbf374

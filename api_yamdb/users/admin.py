@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import User
 
+
 class UserAdmin(admin.ModelAdmin):
     fields = (
         "username",
@@ -10,7 +11,7 @@ class UserAdmin(admin.ModelAdmin):
         "last_name",
         "bio",
         "role"
-      )
+    )
     list_display = (
         "username",
         "email",
@@ -21,5 +22,6 @@ class UserAdmin(admin.ModelAdmin):
     )
     list_editable = ('role',)
     search_fields = ('username',)
+
 
 admin.site.register(User, UserAdmin)

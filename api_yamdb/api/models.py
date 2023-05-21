@@ -1,15 +1,16 @@
 from django.db import models
 
+
 class Category(models.Model):
     """Модель категории."""
 
     name = models.CharField(
-        max_length=20, 
+        max_length=20,
         verbose_name="Наименование категории"
     )
     slug = models.SlugField(
-        unique=True, 
-        db_index=True, 
+        unique=True,
+        db_index=True,
         verbose_name="Слаг категории"
     )
 
@@ -25,13 +26,13 @@ class Genre(models.Model):
     """Модель жанра."""
 
     name = models.CharField(
-        max_length=20, 
+        max_length=20,
         verbose_name="Наименование жанра"
     )
     slug = models.SlugField(
-        unique=True, 
-        db_index=True, 
-        blank=True, 
+        unique=True,
+        db_index=True,
+        blank=True,
         verbose_name="Слаг жанра"
     )
 
@@ -47,13 +48,13 @@ class Title(models.Model):
     """Модель произведения."""
 
     name = models.CharField(
-        max_length=20, 
+        max_length=20,
         verbose_name="Наименование произведения"
     )
     year = models.PositiveIntegerField(
         db_index=True,)
     description = models.TextField(
-        blank=True, 
+        blank=True,
         verbose_name="Описание произведения"
     )
     genre = models.ManyToManyField(

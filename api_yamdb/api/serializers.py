@@ -1,13 +1,7 @@
 from rest_framework import serializers
-<<<<<<< HEAD
-
-from api.models import Category, Genre, Title
-=======
 from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
-
 from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
->>>>>>> 65b8e1507a42d26c734ea6f696bb4dd670fbf374
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -57,9 +51,6 @@ class TitleSerializerCreateAndUpdate(serializers.ModelSerializer):
 
     class Meta:
         model = Title
-<<<<<<< HEAD
-        fields = "__all__"
-=======
         fields = "__all__"
 
 
@@ -136,7 +127,7 @@ class SignUpSerializer(serializers.ModelSerializer):
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
     )
-    
+
     class Meta:
         model = User
         fields = ('email', 'username')
@@ -156,4 +147,3 @@ class TokenSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('username', 'confirmation_code')
->>>>>>> 65b8e1507a42d26c734ea6f696bb4dd670fbf374

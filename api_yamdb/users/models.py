@@ -12,14 +12,14 @@ ROLES = [
     (MODERATOR, 'moderator')
 ]
 
+
 class User(AbstractUser):
-    
     username = models.CharField(
         max_length=150,
         unique=True,
         validators=[RegexValidator(
-          regex=r'^[\w.@+-]+\z$',
-        )]
+            regex=r'^[\w.@+-]+\z$',)
+        ]
     )
     email = models.EmailField(max_length=150, unique=True)
     first_name = models.CharField(max_length=150, blank=True)
