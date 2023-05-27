@@ -6,6 +6,11 @@
 [![HTML](https://img.shields.io/badge/-HTML-464646?style=flat&logo=Html5&logoColor=ffffff&color=043A6B)](https://html.spec.whatwg.org/multipage/)
 [![CSS](https://img.shields.io/badge/-CSS_Bootstrap-464646?style=flat&logo=Css3&logoColor=ffffff&color=043A6B)]([https://html.spec.whatwg.org/multipage/](https://getbootstrap.ru/))
 
+### Примеры запросов API
+
+Документация и примеры запросов представлены в формате Redoc.
+После запуска отладочного web-сервера проекта документация будет доступна по адресу [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/).
+
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Titles). 
 Для приложения реализованы:
 - автоматический запуск тестов,
